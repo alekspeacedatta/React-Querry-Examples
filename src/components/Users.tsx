@@ -1,9 +1,14 @@
 import { useQuery } from "@tanstack/react-query"
 
 const fetchUsers = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users');
-    if(!res.ok) throw new Error("errreriore Brother");
-    return res.json();
+    try {
+        const res = await fetch('https://jsonplaceholder.typicode.com/users') 
+        if(!res.ok) throw new Error("errreriore Brother");
+        return res.json();
+    } catch (error) {
+        console.log('Fetch Error', error);
+        throw error;
+    }
 }
 
 const Users = () => {
@@ -30,7 +35,7 @@ const Users = () => {
             <button onClick={() => refetch()}>refetch data</button>
             {isFetching && <p>refetching data</p>}
             <ul>
-                {data.map(user => (
+                {data.map((user : any) => (
                     <li key={user.id}>
                         {user.name} - {user.email}
                     </li>    
