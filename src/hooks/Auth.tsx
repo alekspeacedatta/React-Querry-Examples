@@ -1,7 +1,7 @@
 // src/hooks/auth.ts
 
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { authApi } from '../api';
+import { authApi } from '../Api';
 
 const fetchCurrentUser = async () => {
   const token = localStorage.getItem('authToken');
