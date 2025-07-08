@@ -31,7 +31,7 @@ function BlogApp() {
     <div style={{ display: 'flex', gap: '20px' }}>
       <div style={{ flex: 1 }}>
         <h2>ბლოგის პოსტები</h2>
-        {posts?.slice(0, 10).map(p => (
+        {posts?.slice(0, 5).map(p => (
           <div key={p.id} onClick={() => setSelectedPostId(p.id)} style={{ padding: '10px', border: '1px solid #ccc', margin: '5px', cursor: 'pointer', backgroundColor: selectedPostId === p.id ? '#e3f2fd' : 'white' }}>
             <h4>{p.title}</h4>
           </div>
