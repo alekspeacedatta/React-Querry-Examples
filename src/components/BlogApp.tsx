@@ -8,7 +8,7 @@ export const getComments = (postId: number) => fetch(`${API_BASE}/posts/${postId
 // hooks/useBlog.js
 export const usePosts = () => useQuery({ queryKey: ['posts'], queryFn: getPosts });
 export const usePost = (postId: number) => useQuery({
-    queryKey: ['post', postId],
+    queryKey: ['post', postId], 
     queryFn: () => getPost(postId),
     enabled: !!postId // მოთხოვნა შესრულდება მხოლოდ მაშინ, როცა postId არსებობს
 });
