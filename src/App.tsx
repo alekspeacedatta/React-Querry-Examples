@@ -1,7 +1,9 @@
-// src/App.tsx
-
 import React, { useState } from 'react';
 import { useCurrentUser, useLogin, useLogout } from './hooks/auth';
+import BlogApp from './components/BlogApp';
+import Users from './components/Users';
+import PaginatedUsers from './components/PaginatedUsers';
+import AddUser from './components/AddUser';
 
 const App: React.FC = () => {
   const { data: user, isLoading } = useCurrentUser();
@@ -51,6 +53,10 @@ const App: React.FC = () => {
           {loginMutation.isError && <p style={{ color: 'red' }}>Login failed</p>}
         </>
       )}
+      <AddUser/>
+      <PaginatedUsers/>
+      <Users/>
+      <BlogApp/>
     </div>
   );
 };
